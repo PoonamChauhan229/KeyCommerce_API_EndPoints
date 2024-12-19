@@ -1,6 +1,8 @@
 const User=require("../model/userModel");
 const express=require("express");
 const router=express.Router();
+const bcrypt=require("bcryptjs");
+const jwt=require("jsonwebtoken");
 router.post("/register",async(req,res)=>{
     try{
         const {name,email,password}=req.body;
@@ -49,9 +51,8 @@ router.post("/login",async(req,res)=>{
         if(!isMatch){
             return res.status(400).json({error:"Invalid email or password"});
         }
-
         
-        const token=jwt.sign({_id:user._id},process.env.JWT_SECRET);
+        const token=jwt.sign({_id:user._id},process.env.JWT_SECRET_KEY);
         res.status(200).json({
             user,
             token,
