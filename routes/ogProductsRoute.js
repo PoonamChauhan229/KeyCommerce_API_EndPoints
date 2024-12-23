@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const OriginalProduct = require('../model/ogProductsModel');
+const OriginalProduct = require('../model/ProductsModel');
 const apiKeyAuth = require('../middleware/apiKeyAuth');
 
 // Get all products route
