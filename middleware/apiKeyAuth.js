@@ -1,22 +1,20 @@
-const ApiKey = require("../model/apikeyModel");
-const User=require("../model/userModel");
+const User = require("../model/userModel");
 
 const apiKeyAuth = async (req, res, next) => {
-    console.log(req.header)
     const apiKey = req.header("x-api-key"); // Example header name
     if (!apiKey) {
         return res.status(401).json({ message: "API key missing" });
     }
 
     try {
-        const apiKeyRecord = await ApiKey.findOne({ apikey: apiKey });
-        console.log(apiKeyRecord)
-        if (!apiKeyRecord) {
+        // Find user directly using the API key in the User model
+        const user = await User.findOne({ apikey: apiKey });
+        if (!user) {
             return res.status(401).json({ message: "Invalid API key" });
         }
 
-        // Attach user info based on the API key
-        req.user = await User.findById(apiKeyRecord.userId);
+        // Attach user info to the request
+        req.user = user;
         next();
     } catch (error) {
         console.error("API Key Verification Error:", error);

@@ -3,33 +3,49 @@ const express=require("express");
 const router=express.Router();
 const bcrypt=require("bcryptjs");
 const jwt=require("jsonwebtoken");
-router.post("/register",async(req,res)=>{
-    try{
-        const {name,email,password}=req.body;
-       // Check if user exists
-        const userExists=await User.findOne({email});
-        if(userExists){
-            return res.status(400).json({error:"User already exists"});
-        }
-        //Password Hashing
-        const salt=await bcrypt.genSalt(10);
-        const hashedPassword=await bcrypt.hash(password,salt);
 
-        //Create user
-        const user=new User({
+router.post("/register", async (req, res) => {
+    try {
+        const { name, email, username, password } = req.body;
+
+        // Check if user with the same email already exists
+        const userExists = await User.findOne({ email });
+        if (userExists) {
+            return res.status(400).json({ error: "User with this email already exists" });
+        }
+
+        // Password Hashing
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+
+        // Create a new user
+        const user = new User({
             ...req.body,
-            password:hashedPassword
+            password: hashedPassword
         });
-        //save the user to DB
+
+        // Save the user to the database
         await user.save();
+
         res.status(201).json({
             user,
-            message:"User created successfully"
+            message: "User created successfully"
         });
-    }catch(error){
-        res.status(500).json({error:error.message});
+    } catch (error) {
+        // Handle duplicate key error
+        if (error.code === 11000) { // MongoDB error code for duplicate keys
+            return res.status(400).json({
+                error: "Username already taken"
+            });
+        }
+
+        // Handle other errors
+        res.status(500).json({ error: error.message });
     }
-})
+});
+
+
+
 
 router.post("/login",async(req,res)=>{
     try{

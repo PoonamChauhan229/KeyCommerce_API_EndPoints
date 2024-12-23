@@ -1,0 +1,25 @@
+[{
+   "name": "Wireless Mouse",
+  "price": 25.99,
+  "description": "A high-quality wireless mouse with ergonomic design."
+},
+{
+  "name": "Bluetooth Headphones",
+  "price": 89.99,
+  "description": "Noise-cancelling Bluetooth headphones with long battery life."
+},
+{
+  "name": "Laptop Stand",
+  "price": 35.5,
+  "description": "A sleek and adjustable laptop stand for ergonomic working."
+},
+{
+  "name": "Smartwatch",
+  "price": 129.99,
+  "description": "A smartwatch with fitness tracking and heart rate monitoring."
+},
+{
+  "name": "Desk Organizer",
+  "price": 19.99,
+  "description": "A wooden desk organizer with multiple compartments for stationery."
+}]
