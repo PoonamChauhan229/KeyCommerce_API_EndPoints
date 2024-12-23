@@ -5,9 +5,10 @@ const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-  products: [{ name: String, price: Number, description: String }],
+  password: { type: String, required: true },  
   apikey: { type: String, unique: true }, // API key directly inside the User model
+  products: [{ name: String, price: Number, description: String }],
+  // cart:[{ name: String, price: Number, description: String }]
 });
 
 // Generate Auth Token

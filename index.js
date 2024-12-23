@@ -5,7 +5,6 @@ const cors = require("cors");
 const connection = require("./db/connection"); 
 const apikeyRoute = require("./routes/apiKeyRoute");
 const userRoute = require("./routes/userRoute");
-const ogProductsRoute = require("./routes/ogProductsRoute");
 const userProductsRoute = require("./routes/userProductsRoute");
 dotenv.config()
 
@@ -16,7 +15,6 @@ connection();
 
 app.use(apikeyRoute);
 app.use(userRoute);
-app.use(ogProductsRoute)
 app.use(userProductsRoute)
 
 app.listen(process.env.PORT, () => {
