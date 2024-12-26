@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const Products = require('../model/ProductsModel');
 const apiKeyAuth = require('../middleware/apiKeyAuth');
 
 
@@ -25,7 +24,7 @@ router.get('/user/products', apiKeyAuth, async (req, res) => {
     }
 });
 
-// Add product to user's cart
+// Add product to user's 
 router.post('/user/products', apiKeyAuth, async (req, res) => {
     const { name, price, description } = req.body; // Expect product details in request body
 
@@ -44,9 +43,9 @@ router.post('/user/products', apiKeyAuth, async (req, res) => {
         user.products.push(newProduct);
         
         // Save the updated user document
-        await user.save();
+        let dbproduct=await user.save();
 
-        res.status(201).json({ message: "Product added successfully", product: newProduct });
+        res.status(201).json({ message: "Product added successfully", product: dbproduct.products[dbproduct.products.length-1] });
     } catch (error) {
         console.error("Error adding product:", error);
         res.status(500).json({ message: "Server error" });
