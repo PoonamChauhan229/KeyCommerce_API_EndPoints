@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const apiKeyAuth = require('../middleware/apiKeyAuth');
 
-router.post('/user/cart', apiKeyAuth, async (req, res) => {
+router.post('/user/addcart', apiKeyAuth, async (req, res) => {
     try {
       const { productId, qty } = req.body;
   
@@ -13,16 +13,20 @@ router.post('/user/cart', apiKeyAuth, async (req, res) => {
   
       // The user is already authenticated and available in req.user
       const user = req.user;
-  
+
+      // console.log(user);
       // Find the product from the user's products array
-      const product = user.products.find(p => p._id.toString() === productId.toString());
-  
+      const product = user.products.find((element) => element._id.toString() === productId.toString());
+
+      // console.log(product);
       if (!product) {
         return res.status(404).json({ message: "Product not found in user's products" });
       }
   
       // Check if the product is already in the cart
       const existingCartItem = user.cart.find(item => item.productId.toString() === productId.toString());
+
+      // console.log(existingCartItem);
   
       if (existingCartItem) {
         // Update the quantity and total price if the product is already in the cart
@@ -45,17 +49,55 @@ router.post('/user/cart', apiKeyAuth, async (req, res) => {
       await user.save();
   
       // Return a success response with the updated cart
+      const addedCartItem = user.cart.find(item => item.productId.toString() === productId.toString())
       res.status(200).json({
-        message: "Product added to cart successfully",
-        cart: user.cart,  // The updated cart
+        message: existingCartItem? "Product quantity updated in cart" : "Product added to cart successfully",
+        cart: addedCartItem,  // The updated cart
       });
   
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: "Error adding product to cart", error: error.message });
     }
-  });
+});
+
+router.get('/user/getcart', apiKeyAuth, async (req, res) => {
+    try {
+      // The user is already authenticated and available in req.user
+      const user = req.user;
   
-      
-      module.exports = router;
+      // Get the cart items associated with the user
+      const cartItems = user.cart; // Assuming cart items are stored in the user document
+  
+      // Return the cart items
+      res.status(200).json(cartItems);
+    } catch (error) {
+      console.error("Error retrieving cart items:", error);
+      res.status(500).json({ message: "Server error" });
+    }
+});
+
+router.delete('/user/deletecart/:id', apiKeyAuth, async (req, res) => {
+    try {
+      // The user is already authenticated and available in req.user
+      const user = req.user;
+      console.log(req.params.id)
+
+      // Clear the cart with respect to the cart Id
+
+  
+      // Clear the cart items associated with the user
+      // user.cart = []; // Assuming cart items are stored in the user document
+  
+      // // Save the updated user document
+      // await user.save();
+  
+      // // Return a success response
+      // res.status(200).json({ message: "Cart items deleted successfully" });
+    } catch (error) {
+      console.error("Error clearing cart items:", error);
+      res.status(500).json({ message: "Server error" });
+    }
+});
+module.exports = router;
       
