@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },  
   apikey: { type: String, unique: true }, // API key directly inside the User model
-  products: [{ name: String, price: Number, description: String , category: String}],
+  products: [{ name: String, price: Number, description: String , category: String,productImage: String}],
   cart: [
     {
       productId: {type: mongoose.Schema.Types.ObjectId},
@@ -15,6 +15,7 @@ const userSchema = new mongoose.Schema({
       price: Number,
       description: String,
       category: String,
+      productImage: String,
       qty: { type: Number, required: true },
       totalPrice: Number, // Calculated as price * qty
       addedAt: { type: Date, default: Date.now },

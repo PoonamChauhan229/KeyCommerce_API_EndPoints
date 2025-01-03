@@ -40,6 +40,8 @@ router.post('/user/addcart', apiKeyAuth, async (req, res) => {
           name: product.name,
           price: product.price,
           description: product.description,
+          productImage: product.productImage,
+          category: product.category,
           qty: qty,
           totalPrice: product.price * qty,  // Calculate total price
           addedAt: new Date(),

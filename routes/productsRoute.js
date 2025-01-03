@@ -48,9 +48,9 @@ router.get('/user/products/:id', apiKeyAuth, async (req, res) => {
   
 // Add product to user's 
 router.post('/user/products', apiKeyAuth, async (req, res) => {
-    const { name, price, description } = req.body; // Expect product details in request body
+    const { name, price, description, productImage,category} = req.body; // Expect product details in request body
 
-    if (!name || !price || !description) {
+    if (!name || !price || !description || !productImage || !category){
         return res.status(400).json({ message: "Name, price, and description are required" });
     }
 
@@ -59,7 +59,7 @@ router.post('/user/products', apiKeyAuth, async (req, res) => {
         const user = req.user;
 
         // Create a new product
-        const newProduct = { name, price, description };
+        const newProduct = { name, price, description,productImage,category};
 
         // Add the product to the user's products array
         user.products.push(newProduct);
@@ -77,7 +77,7 @@ router.post('/user/products', apiKeyAuth, async (req, res) => {
 // Update a product
 router.put('/user/products/:productId', apiKeyAuth, async (req, res) => {
     const { productId } = req.params; // Product ID to be updated
-    const { name, price, description } = req.body; // Updated product details
+    const { name, price, description , productImage,category} = req.body; // Updated product details
 
     if (!name && !price && !description) {
         return res.status(400).json({ message: "At least one field (name, price, or description) must be provided" });
@@ -97,6 +97,8 @@ router.put('/user/products/:productId', apiKeyAuth, async (req, res) => {
         if (name) product.name = name;
         if (price) product.price = price;
         if (description) product.description = description;
+        if (productImage) product.productImage = productImage;
+        if (category) product.category = category;
 
         // Save the updated user document
         await user.save();
@@ -132,8 +134,6 @@ router.delete('/user/products/:productId', apiKeyAuth, async (req, res) => {
     } catch (error) {   
     }
 });
-
-// Using limit skip want to add pagination
 
 module.exports = router;
 
