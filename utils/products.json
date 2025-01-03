@@ -1,25 +1,122 @@
-[{
+[
+  {
    "name": "Wireless Mouse",
   "price": 25.99,
-  "description": "A high-quality wireless mouse with ergonomic design."
+  "description": "A high-quality wireless mouse with ergonomic design.",
+  "category": "Electronics"
 },
 {
   "name": "Bluetooth Headphones",
   "price": 89.99,
-  "description": "Noise-cancelling Bluetooth headphones with long battery life."
+  "description": "Noise-cancelling Bluetooth headphones with long battery life.",
+  "category": "Electronics"
 },
 {
   "name": "Laptop Stand",
   "price": 35.5,
-  "description": "A sleek and adjustable laptop stand for ergonomic working."
+  "description": "A sleek and adjustable laptop stand for ergonomic working.",
+  "category": "Electronics"
 },
 {
   "name": "Smartwatch",
   "price": 129.99,
-  "description": "A smartwatch with fitness tracking and heart rate monitoring."
-},
+  "description": "A smartwatch with fitness tracking and heart rate monitoring.",
+  "category": "Electronics"
+},  
 {
   "name": "Desk Organizer",
   "price": 19.99,
-  "description": "A wooden desk organizer with multiple compartments for stationery."
+  "description": "A wooden desk organizer with multiple compartments for stationery.",
+  "category": "Office_Supplies"
+},
+{
+  "name": "Pen Set",
+  "price": 12.99,
+  "description": "A set of pencils, pens, and markers for writing and drawing.",
+  "category": "Office_Supplies"
+},
+{
+  "name": "Printer",
+  "price": 79.99,
+  "description": "A high-quality printer for printing documents and photos.",
+  "category": "Office_Supplies"
+},
+{
+  "name": "Calculator",
+  "price": 9.99,
+  "description": "A portable calculator for quick calculations.",
+  "category": "Office_Supplies"
+},
+
+{
+  "name": "T-Shirt",
+  "price": 19.99,
+  "description": "A comfortable and stylish t-shirt for casual wear.",
+  "category": "Clothing"
+},
+{
+  "name": "Jeans",
+  "price": 59.99,
+  "description": "Comfortable and stylish jeans for everyday wear.",
+  "category": "Clothing"    
+},
+{
+  "name": "Sneakers",
+  "price": 79.99,
+  "description": "Stylish and comfortable sneakers for active lifestyle.",
+  "category": "Clothing"
+},
+{
+  "name": "Jacket",
+  "price": 49.99,
+  "description": "Warm and stylish jacket for cold weather.", 
+  "category": "Clothing"
+},
+{
+  "name": "Headphones",
+  "price": 29.99,
+  "description": "Noise-cancelling headphones for immersive audio experience.",
+  "category": "Electronics"
+},
+{
+  "name": "Smartphone",
+  "price": 699.99,
+  "description": "A high-performance smartphone with advanced features.",
+  "category": "Electronics"
+},
+{
+  "name": "Laptop", 
+  "price": 999.99,
+  "description": "A powerful laptop for professional use.",
+  "category": "Electronics"
+},
+{ 
+  "name": "Tablet",
+  "price": 399.99,
+  "description": "A versatile tablet for entertainment and productivity.",
+  "category": "Electronics"
+},
+{
+  "name": "Camera",
+  "price": 499.99,  
+  "description": "A high-quality camera for capturing stunning photos and videos.",
+  "category": "Electronics"
+},
+{
+  "name": "Smart TV",
+  "price": 799.99,
+  "description": "A smart TV with advanced features and connectivity.", 
+  "category": "Electronics"
+},  
+{
+  "name": "Smartphone",
+  "price": 699.99,
+  "description": "A high-performance smartphone with advanced features.",
+  "category": "Electronics"
+},
+{
+  "name": "Calculator",
+  "price": 9.99,
+  "description": "A portable calculator for quick calculations.",
+  "category": "Office_Supplies"
 }]

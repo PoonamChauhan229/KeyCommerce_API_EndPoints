@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const User=require('../model/userModel');
 const apiKeyAuth = require('../middleware/apiKeyAuth');
 
 router.post('/user/addcart', apiKeyAuth, async (req, res) => {
@@ -82,22 +83,40 @@ router.delete('/user/deletecart/:id', apiKeyAuth, async (req, res) => {
       // The user is already authenticated and available in req.user
       const user = req.user;
       console.log(req.params.id)
+      const cartItemId=req.params.id
+      // Remove the cart item with the matching _id
+    user.cart = user.cart.filter((item) => item._id.toString() !== cartItemId);
+   
+    await user.save();
+     
+    res.status(200).json({
+       message: "Cart item deleted successfully",
+        cart: user.cart 
+      });
 
-      // Clear the cart with respect to the cart Id
-
-  
-      // Clear the cart items associated with the user
-      // user.cart = []; // Assuming cart items are stored in the user document
-  
-      // // Save the updated user document
-      // await user.save();
-  
-      // // Return a success response
-      // res.status(200).json({ message: "Cart items deleted successfully" });
-    } catch (error) {
+  } catch (error) {
       console.error("Error clearing cart items:", error);
       res.status(500).json({ message: "Server error" });
     }
 });
+
+// Empty the cart route
+router.delete('/user/emptycart', apiKeyAuth, async (req, res) => {
+    try { 
+      // The user is already authenticated and available in req.user
+      const user = req.user;      
+      // Clear the cart by setting it to an empty array      
+      user.cart = [];
+      await user.save();
+      res.status(200).json({ 
+        message: "Cart cleared successfully",
+         cart: user.cart 
+        });
+    } catch (error) { 
+      console.error("Error clearing cart items:", error);
+      res.status(500).json({ message: "Server error" });
+    }
+  });
+
 module.exports = router;
       

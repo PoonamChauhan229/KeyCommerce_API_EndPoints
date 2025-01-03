@@ -3,11 +3,11 @@ const router = express.Router();
 const apiKeyAuth = require('../middleware/apiKeyAuth');
 
 
+// Get All Products
 router.get('/user/products', apiKeyAuth, async (req, res) => {
     try {
         // The user is already attached to req.user by the apiKeyAuth middleware
         const user = req.user;
-
         // Get the products associated with the user
         const products = user.products; // Assuming products are stored in the user document
 
@@ -24,6 +24,28 @@ router.get('/user/products', apiKeyAuth, async (req, res) => {
     }
 });
 
+router.get('/user/products/:id', apiKeyAuth, async (req, res) => {
+    try {
+      // The user is already attached to req.user by the apiKeyAuth middleware
+      const user = req.user;
+      const productId = req.params.id;
+    
+      // Get the product associated with the user
+      const product = user.products.find((element) => element._id.toString() === productId.toString());
+
+        if (!product) {
+        return res.status(404).json({ message: "Product not found" });
+      }
+  
+      // Return the product
+      res.status(200).json(product);
+      
+    }catch (error) {
+      console.error("Error retrieving product:", error);
+      res.status(500).json({ message: "Server error" });
+    }
+  });
+  
 // Add product to user's 
 router.post('/user/products', apiKeyAuth, async (req, res) => {
     const { name, price, description } = req.body; // Expect product details in request body
@@ -110,6 +132,8 @@ router.delete('/user/products/:productId', apiKeyAuth, async (req, res) => {
     } catch (error) {   
     }
 });
+
+// Using limit skip want to add pagination
 
 module.exports = router;
 

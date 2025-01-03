@@ -44,9 +44,6 @@ router.post("/register", async (req, res) => {
     }
 });
 
-
-
-
 router.post("/login",async(req,res)=>{
     try{
         const {email,password}=req.body;
@@ -78,5 +75,7 @@ router.post("/login",async(req,res)=>{
         res.status(500).json({error:error.message});
     }
 })
+
+// forget password
 
 module.exports=router;
