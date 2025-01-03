@@ -3,120 +3,140 @@
    "name": "Wireless Mouse",
   "price": 25.99,
   "description": "A high-quality wireless mouse with ergonomic design.",
-  "category": "Electronics"
+  "category": "Electronics",
+  "productImage":"https://ibb.co/dLhmSsM"
 },
 {
   "name": "Bluetooth Headphones",
   "price": 89.99,
   "description": "Noise-cancelling Bluetooth headphones with long battery life.",
-  "category": "Electronics"
+  "category": "Electronics",
+  "productImage":"https://ibb.co/6NT3Szn"
 },
 {
   "name": "Laptop Stand",
   "price": 35.5,
   "description": "A sleek and adjustable laptop stand for ergonomic working.",
-  "category": "Electronics"
+  "category": "Electronics",
+  "productImage":"https://ibb.co/GVhrxb4"
 },
 {
   "name": "Smartwatch",
   "price": 129.99,
   "description": "A smartwatch with fitness tracking and heart rate monitoring.",
-  "category": "Electronics"
+  "category": "Electronics",
+  "productImage":"https://ibb.co/zHzCjxT"
 },  
 {
   "name": "Desk Organizer",
   "price": 19.99,
   "description": "A wooden desk organizer with multiple compartments for stationery.",
-  "category": "Office_Supplies"
+  "category": "Office_Supplies",
+  "productImage":"https://ibb.co/YyTMPMc"
 },
 {
   "name": "Pen Set",
   "price": 12.99,
   "description": "A set of pencils, pens, and markers for writing and drawing.",
-  "category": "Office_Supplies"
+  "category": "Office_Supplies",
+  "productImage":"https://ibb.co/k1VrHf0"
 },
 {
   "name": "Printer",
   "price": 79.99,
   "description": "A high-quality printer for printing documents and photos.",
-  "category": "Office_Supplies"
+  "category": "Office_Supplies",
+  "productImage":"https://ibb.co/vjcFGXZ"
 },
 {
   "name": "Calculator",
   "price": 9.99,
   "description": "A portable calculator for quick calculations.",
-  "category": "Office_Supplies"
+  "category": "Office_Supplies",
+  "productImage":"https://ibb.co/dfxKzv8"
 },
-
 {
   "name": "T-Shirt",
   "price": 19.99,
   "description": "A comfortable and stylish t-shirt for casual wear.",
-  "category": "Clothing"
+  "category": "Clothing",
+  "productImage":"https://ibb.co/v1WVFmN"
 },
 {
   "name": "Jeans",
   "price": 59.99,
   "description": "Comfortable and stylish jeans for everyday wear.",
-  "category": "Clothing"    
+  "category": "Clothing",
+  "productImage":"https://ibb.co/r7qSMSy" 
 },
 {
   "name": "Sneakers",
   "price": 79.99,
   "description": "Stylish and comfortable sneakers for active lifestyle.",
-  "category": "Clothing"
+  "category": "Clothing",
+  "productImage":"https://ibb.co/dQ5ZsZV"
 },
 {
   "name": "Jacket",
   "price": 49.99,
   "description": "Warm and stylish jacket for cold weather.", 
-  "category": "Clothing"
+  "category": "Clothing",
+  "productImage":"https://ibb.co/Dk0rpFq"
 },
 {
-  "name": "Headphones",
+  "name": "Running Shoes",
+  "price": 59.99,
+  "description": "Comfortable running shoes for everyday use.",
+  "category": "Footwear",
+  "productImage":"https://ibb.co/TLD5st8"
+},
+{
+  "name": "Leather Boots",
+  "price": 89.99,
+  "description": "Durable leather boots perfect for hiking.",
+  "category": "Footwear",
+  "productImage":"https://ibb.co/LtRSrq4"
+},
+{
+  "name": "Sandals",
   "price": 29.99,
-  "description": "Noise-cancelling headphones for immersive audio experience.",
-  "category": "Electronics"
+  "description": "Lightweight sandals for summer outings.",
+  "category": "Footwear",
+  "productImage":"https://ibb.co/3vsnzSM"
 },
 {
-  "name": "Smartphone",
-  "price": 699.99,
-  "description": "A high-performance smartphone with advanced features.",
-  "category": "Electronics"
+  "name": "Formal Shoes",
+  "price": 79.99,
+  "description": "Elegant formal shoes for business meetings.",
+  "category": "Footwear",
+  "productImage":"https://ibb.co/pfkGN5M"
 },
 {
-  "name": "Laptop", 
-  "price": 999.99,
-  "description": "A powerful laptop for professional use.",
-  "category": "Electronics"
-},
-{ 
-  "name": "Tablet",
-  "price": 399.99,
-  "description": "A versatile tablet for entertainment and productivity.",
-  "category": "Electronics"
+  "name": "Wristwatch",
+  "price": 120.00,
+  "description": "Stylish wristwatch with a leather strap.",
+  "category": "Accessories",
+  "productImage":"https://ibb.co/3dtNZdQ"
 },
 {
-  "name": "Camera",
-  "price": 499.99,  
-  "description": "A high-quality camera for capturing stunning photos and videos.",
-  "category": "Electronics"
+  "name": "Sunglasses",
+  "price": 49.99,
+  "description": "Polarized sunglasses for UV protection.",
+  "category": "Accessories",
+  "productImage":"https://ibb.co/3vWg5zP"
 },
 {
-  "name": "Smart TV",
-  "price": 799.99,
-  "description": "A smart TV with advanced features and connectivity.", 
-  "category": "Electronics"
-},  
-{
-  "name": "Smartphone",
-  "price": 699.99,
-  "description": "A high-performance smartphone with advanced features.",
-  "category": "Electronics"
+  "name": "Backpack",
+  "price": 59.99,
+  "description": "Spacious backpack suitable for travel.",
+  "category": "Accessories",
+  "productImage":"https://ibb.co/FBMmQyH"
 },
 {
-  "name": "Calculator",
-  "price": 9.99,
-  "description": "A portable calculator for quick calculations.",
-  "category": "Office_Supplies"
-}]
+  "name": "Belt",
+  "price": 34.99,
+  "description": "Classic leather belt for formal attire.",
+  "category": "Accessories",
+  "productImage":"https://ibb.co/6Rrd7VM"
+}
+]
