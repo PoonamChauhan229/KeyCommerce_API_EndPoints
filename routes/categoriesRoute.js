@@ -3,7 +3,7 @@ const router = express.Router();
 const apiKeyAuth = require("../middleware/apiKeyAuth");
 
 // Get All Categories
-router.get("/user/categories", apiKeyAuth, async (req, res) => {
+router.get("/userproducts/categories", apiKeyAuth, async (req, res) => {
     try {
         const user = req.user; // User is already attached by apiKeyAuth middleware
 
@@ -28,7 +28,7 @@ router.get("/user/categories", apiKeyAuth, async (req, res) => {
 })
 
 // Get Products Via Category
-router.get('/user/:category', apiKeyAuth, async (req, res) => {
+router.get('/userproducts/:category', apiKeyAuth, async (req, res) => {
     try {
         // The user is already attached to req.user by the apiKeyAuth middleware
         const user = req.user;

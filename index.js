@@ -8,6 +8,7 @@ const userRoute = require("./routes/userRoute");
 const productsRoute = require("./routes/productsRoute");
 const cartRoute = require("./routes/cartRoute");
 const categoryRoute = require("./routes/categoriesRoute");
+const paginateRoute=require("./routes/paginateRoute")
 
 dotenv.config()
 
@@ -21,6 +22,7 @@ app.use(userRoute);
 app.use(productsRoute)
 app.use(cartRoute)
 app.use(categoryRoute)
+app.use(paginateRoute)
 
 
 app.listen(process.env.PORT, () => {
